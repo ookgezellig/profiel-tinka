@@ -25,11 +25,15 @@ Dit profiel is samengesteld op basis van openbare bronnen om een compleet overzi
 Dit profiel is verzameld via het volgende proces:
 
 ### 1. Bronnenonderzoek (Exa MCP Search)
-Gebruikte zoekopdrachten:
-- `"Tinka den Arend" APG pensioen`
-- `"Tinka den Arend" PPF APG bestuur`
-- `site:ppf-apg.nl "Tinka den Arend"`
-- `"Tinka den Arend" LinkedIn`
+
+**Wat is Exa MCP?**
+[Exa](https://exa.ai/) is een AI-native zoekmachine die semantisch zoeken combineert met traditionele keyword search. Via het [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) kan Claude direct met Exa communiceren om real-time webonderzoek uit te voeren. Dit maakt het mogelijk om tijdens een gesprek automatisch bronnen te verzamelen, feiten te verifiëren en actuele informatie op te halen - zonder handmatig te hoeven zoeken.
+
+**Gebruikte zoekopdrachten:**
+- `"Tinka den Arend" APG pensioen` - Algemene context over haar rol bij APG
+- `"Tinka den Arend" PPF APG bestuur` - Specifieke bestuursposities
+- `site:ppf-apg.nl "Tinka den Arend"` - Directe bronnen van de PPF APG website
+- `"Tinka den Arend" LinkedIn` - Professionele achtergrond en netwerk
 
 ### 2. Primaire bronnen
 | Bron | URL |
@@ -59,7 +63,7 @@ Screenshots zijn gemaakt met Playwright browser automation van:
 
 ### 6. HTML-generatie
 Het HTML-bestand is gegenereerd met:
-- Styling gebaseerd op PPF APG website design system
+- Styling gebaseerd op [PPF APG website](https://www.ppf-apg.nl/) design system
 - Kleuren: PPF Blue (#004899), PPF Yellow (#c9d200)
 - Font: Source Sans 3 (Google Fonts)
 - Responsief ontwerp voor mobile/desktop
@@ -71,9 +75,8 @@ Het HTML-bestand is gegenereerd met:
 ```
 profiel-tinka/
 ├── index.html                          # Gepubliceerde profielpagina
-├── tinka-den-arend-profiel.md          # Bronbestand in Markdown
 ├── README.md                           # Dit bestand
-├── screenshots/                        # Screenshots voor de website
+├── screenshots/                        # Afbeeldingen voor de website
 │   ├── 01_ppf_apg_tinka_profiel.png
 │   ├── 02_ppf_apg_homepage.png
 │   ├── 04_apg_award_article.png
@@ -86,15 +89,20 @@ profiel-tinka/
 │   ├── ppf-apg-news-page.png
 │   ├── ppf-apg-styling.png
 │   └── tinka_profile_photo.jpg
-└── research/                           # Onderzoeksbestanden (niet gepubliceerd)
-    ├── capture_screenshots.py          # Script voor screenshot verzameling
-    ├── tinka-den-arend-profiel.html    # HTML bronbestand
-    ├── tinka-den-arend-profiel.md      # Markdown bronbestand
-    ├── screenshots/                    # Backup screenshots
-    └── presentation/                   # Presentatie bestanden
-        ├── create_pptx.py              # PowerPoint generatie script
-        ├── convert_to_pdf.py           # PDF conversie script
-        └── output/                     # Gegenereerde presentaties
+├── research/                           # Onderzoeksmateriaal
+│   ├── tinka-den-arend-profiel.md      # Bronbestand in Markdown
+│   ├── tinka-den-arend-profiel.html    # HTML bronbestand
+│   └── scripts/                        # Scripts voor dataverzameling
+│       ├── capture_screenshots.py      # Screenshot verzameling (Playwright)
+│       ├── create_pptx.py              # PowerPoint generatie
+│       └── convert_to_pdf.py           # PDF conversie
+└── presentation/                       # Gegenereerde presentaties
+    ├── tinka_den_arend_profiel.pptx    # PowerPoint presentatie
+    ├── tinka_den_arend_profiel.pdf     # PDF versie
+    └── notes/                          # Presentatie notities
+        ├── slides.md
+        ├── notes.md
+        └── refs.md
 ```
 
 ---
@@ -107,7 +115,7 @@ profiel-tinka/
 - **Claude Code**: Markdown naar HTML conversie met custom styling
 
 ### Styling
-De HTML is gestyled naar het PPF APG design system:
+De HTML is gestyled naar het [PPF APG](https://www.ppf-apg.nl/) design system:
 - CSS Variables voor consistente kleuren
 - Responsive grid layouts
 - Print-friendly styling
