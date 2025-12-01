@@ -241,12 +241,55 @@ Wil je een vergelijkbaar AI-gegenereerd profiel maken? Hier is hoe je dit projec
 ### Stap-voor-stap
 
 **1. MCP Servers instellen**
-```bash
-# Installeer Exa MCP voor web research
-npm install -g @anthropic-ai/exa-mcp-server
 
-# Configureer je .claude/settings.json met MCP servers
+MCP (Model Context Protocol) servers geven Claude Code extra mogelijkheden zoals web zoeken en browser automatisering. Hier zijn de installatiestappen:
+
+**Officiële documentatie:**
+- [Claude Code MCP Guide](https://docs.anthropic.com/en/docs/claude-code/mcp) - Volledige installatiehandleiding
+- [MCP Specificatie](https://modelcontextprotocol.io/) - Technische documentatie van het protocol
+- [Exa MCP Server](https://github.com/exa-labs/exa-mcp-server) - AI-native web search
+- [Playwright MCP Server](https://github.com/executeautomation/mcp-playwright) - Browser automatisering
+
+**Installatie via CLI:**
+```bash
+# Exa MCP voor web research (HTTP transport)
+claude mcp add --transport http exa https://mcp.exa.ai \
+  --header "Authorization: Bearer YOUR_EXA_API_KEY"
+
+# Playwright MCP voor screenshots (stdio transport)
+claude mcp add --transport stdio playwright -- npx -y @anthropic-ai/mcp-playwright
+
+# Bekijk je geïnstalleerde servers
+claude mcp list
 ```
+
+**Alternatief: configuratie via `.mcp.json`:**
+Maak een `.mcp.json` bestand in je project root:
+```json
+{
+  "mcpServers": {
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai",
+      "headers": {
+        "Authorization": "Bearer ${EXA_API_KEY}"
+      }
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-playwright"]
+    }
+  }
+}
+```
+
+**Windows-specifiek:** Voor stdio servers op Windows, gebruik `cmd /c` wrapper:
+```bash
+claude mcp add --transport stdio playwright -- cmd /c npx -y @anthropic-ai/mcp-playwright
+```
+
+**Verificatie:** Start Claude Code en typ `/mcp` om de status van je servers te zien.
 
 **2. Start het onderzoek**
 Geef Claude Code een prompt zoals:
