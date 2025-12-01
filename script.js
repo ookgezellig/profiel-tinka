@@ -218,18 +218,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Table row highlight on hover (enhanced)
-    document.querySelectorAll('table tbody tr').forEach(row => {
-        row.addEventListener('mouseenter', () => {
-            row.style.transform = 'scale(1.01)';
-            row.style.boxShadow = '0 2px 8px rgba(0, 72, 153, 0.1)';
-        });
-        row.addEventListener('mouseleave', () => {
-            row.style.transform = '';
-            row.style.boxShadow = '';
-        });
-    });
-
     // Profile card parallax effect
     const profileCard = document.querySelector('.profile-card');
     if (profileCard) {
