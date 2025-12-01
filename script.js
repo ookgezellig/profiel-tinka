@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Gallery image lightbox
-    const galleryImages = document.querySelectorAll('.gallery-item img');
+    // Gallery and carousel image lightbox
+    const galleryImages = document.querySelectorAll('.gallery-item img, .carousel-slide img');
     galleryImages.forEach(img => {
         img.style.cursor = 'pointer';
         img.setAttribute('tabindex', '0');
@@ -89,6 +89,23 @@ document.addEventListener('DOMContentLoaded', function() {
         img.setAttribute('aria-label', 'Klik om te vergroten: ' + (img.alt || 'afbeelding'));
 
         const openLightbox = () => {
+            // Get caption and visual-alt from the parent figure
+            const figure = img.closest('figure');
+            const figcaption = figure ? figure.querySelector('figcaption') : null;
+            let captionText = '';
+            let visualAltText = '';
+
+            if (figcaption) {
+                // Get the main caption text (excluding visual-alt)
+                const captionClone = figcaption.cloneNode(true);
+                const visualAlt = captionClone.querySelector('.visual-alt');
+                if (visualAlt) {
+                    visualAltText = visualAlt.textContent;
+                    visualAlt.remove();
+                }
+                captionText = captionClone.textContent.trim();
+            }
+
             const lightbox = document.createElement('div');
             lightbox.className = 'lightbox';
             lightbox.setAttribute('role', 'dialog');
@@ -96,7 +113,15 @@ document.addEventListener('DOMContentLoaded', function() {
             lightbox.setAttribute('aria-label', 'Afbeelding vergroot');
             lightbox.innerHTML = `
                 <button class="lightbox-close" aria-label="Sluiten">&times;</button>
-                <img src="${img.src}" alt="${img.alt}">
+                <div class="lightbox-content">
+                    <img src="${img.src}" alt="${img.alt}">
+                    ${captionText || visualAltText ? `
+                        <div class="lightbox-caption">
+                            ${captionText ? `<p class="lightbox-title">${captionText}</p>` : ''}
+                            ${visualAltText ? `<p class="lightbox-visual-alt">${visualAltText}</p>` : ''}
+                        </div>
+                    ` : ''}
+                </div>
             `;
             document.body.appendChild(lightbox);
             document.body.style.overflow = 'hidden';

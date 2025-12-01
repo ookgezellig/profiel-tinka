@@ -14,9 +14,11 @@ Een compleet profiel van Tinka den Arend, werkgeversvoorzitter PPF APG en Hoofd 
 
 - [English Summary](#english-summary)
 - [Over dit project](#over-dit-project)
+- [Voordelen van agentic bouwen](#voordelen-van-agentic-bouwen)
 - [Onderzoeksproces](#onderzoeksproces)
 - [Tijdsbesteding](#tijdsbesteding)
-- [How to Replicate](#how-to-replicate)
+- [Zelf repliceren](#zelf-repliceren)
+- [Build-logboek](#build-logboek)
 - [Bestandsstructuur](#bestandsstructuur)
 - [Technische details](#technische-details)
 - [Toegankelijkheid en compliance](#toegankelijkheid-en-compliance)
@@ -62,6 +64,52 @@ Dit profiel is samengesteld op basis van openbare bronnen om een compleet overzi
 ### Prestaties 2025
 - PPF APG was een van de drie "koplopers" in de pensioentransitie naar het nieuwe stelsel (Wtp)
 - Winnaar Pensioen Pro Award "Pensioenfonds van het Jaar" (25 juni 2025)
+
+---
+
+## Voordelen van agentic bouwen
+
+Dit project demonstreert de kracht van **agentic development** - het bouwen van software met AI als primaire ontwikkelaar. Hier zijn de belangrijkste voordelen die we tijdens dit project hebben ervaren:
+
+### 1. Uitgebreide en precieze commit messages
+AI-gegenereerde commit messages zijn vele malen uitgebreider en preciezer dan wat een menselijke ontwikkelaar typisch zou schrijven. Waar een mens vaak kiest voor korte beschrijvingen zoals "fix bug" of "update styles", genereert de AI gedetailleerde beschrijvingen van elke wijziging.
+
+**Voorbeeld uit dit project:**
+```
+Fix desktop whitespace and dark mode contrast
+
+- Reduce excessive margins on h2, h3, h4, p, tables, lists
+- Tighten spacing for horizontal rules, info grids, highlight boxes
+- Improve dark mode color contrast (WCAG 2.1 AA compliant)
+- Use brighter colors for dark mode: blue #6ab0e8, yellow #f0e68c
+- Add specific dark mode blockquote styling for better readability
+- Adjust sticky TOC sidebar dimensions
+```
+
+Dit creëert een **compleet en doorzoekbaar logboek** van hoe de site tot stand is gekomen, stap voor stap. Bekijk alle commits op de [GitHub deployments pagina](https://github.com/ookgezellig/profiel-tinka/deployments).
+
+### 2. Iteratieve verfijning met directe feedback
+De AI kan snel reageren op feedback en wijzigingen doorvoeren. In dit project zijn tientallen iteraties uitgevoerd - van eerste prototype tot volledig toegankelijke, tweetalige website - binnen enkele uren.
+
+### 3. Consistente kwaliteit en best practices
+De AI past automatisch best practices toe:
+- **WCAG 2.0 AA toegankelijkheid** vanaf het begin
+- **Semantische HTML5** met correcte ARIA labels
+- **Responsive design** met mobile-first aanpak
+- **SEO-optimalisatie** met meta tags, Open Graph, Schema.org
+- **Print-stylesheets** met page-break optimalisatie
+
+### 4. Geïntegreerde documentatie
+Code, documentatie en commit messages worden in dezelfde sessie gegenereerd, waardoor alles consistent en up-to-date blijft. Deze README is bijvoorbeeld volledig door AI geschreven.
+
+### 5. Snelle prototyping en experimentatie
+Features zoals dark mode, screenshot carousel, en meertaligheid kunnen binnen minuten worden toegevoegd en getest, in plaats van uren of dagen.
+
+### 6. Transparante ontwikkelgeschiedenis
+Het volledige [build-logboek](BUILD-LOGBOEK.md) documenteert elke stap van de ontwikkeling, wat waardevol is voor:
+- Leren van het ontwikkelproces
+- Debuggen van problemen
+- Reproduceren van het project
 
 ---
 
@@ -149,7 +197,7 @@ De website is in **meerdere iteratieve stappen** gegenereerd door [Claude Code](
 - Volledige Engelse vertaling van de website (`index-en.html`)
 - Taalwissel-knop in header
 
-**100% AI-gegenereerd**: Dit volledige project - van bronnenonderzoek tot HTML-generatie, interactieve features én deze README - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code, content of documentatie. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het iteratieve proces.
+**100% AI-gegenereerd**: Dit volledige project - van bronnenonderzoek tot HTML-generatie, interactieve features én deze README - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). De AI schreef alle code, content en documentatie. De menselijke input bestond uit de initiële opdracht, feedback tijdens het iteratieve proces, en het handmatig bijsnijden van screenshots om cookie-banners te verwijderen.
 
 ## Tijdsbesteding
 
@@ -170,13 +218,17 @@ De website is in **meerdere iteratieve stappen** gegenereerd door [Claude Code](
 | Engelse versie website (index-en.html) | ~20 min |
 | README updates (English summary, How to replicate) | ~15 min |
 | Screenshot carousel, disclaimer, cleanup | ~15 min |
-| **Totaal** | **~3 uur 40 min** |
+| Dark mode contrast en whitespace fixes | ~15 min |
+| Voordelen agentic bouwen, build-logboek | ~20 min |
+| **Totaal** | **~4 uur 15 min** |
 
 *Gemeten op basis van actieve werktijd. Screenshots werden handmatig bijgesneden door de gebruiker om cookie-banners te verwijderen.*
 
+**Let op:** Voor de eerste commit was al veel werk gedaan (bronnenonderzoek, markdown profiel schrijven, screenshots verzamelen). Deze pre-commit activiteiten staan bovenaan in de tijdtabel.
+
 ---
 
-## How to Replicate
+## Zelf repliceren
 
 Wil je een vergelijkbaar AI-gegenereerd profiel maken? Hier is hoe je dit project kunt repliceren:
 
@@ -232,6 +284,33 @@ bedrijfswebsite en nieuwsartikelen. Gebruik de huisstijl van [BEDRIJF]."
 
 "Maak een Engelse versie met dezelfde functionaliteit"
 ```
+
+---
+
+## Build-logboek
+
+Het volledige build-logboek documenteert elke stap van de ontwikkeling van dit project. Bekijk het complete logboek in [BUILD-LOGBOEK.md](BUILD-LOGBOEK.md) of op de [GitHub commits pagina](https://github.com/ookgezellig/profiel-tinka/commits/main).
+
+### Overzicht commits (van oud naar nieuw)
+
+| # | Commit | Beschrijving |
+|---|--------|--------------|
+| 1 | [47c1a39](https://github.com/ookgezellig/profiel-tinka/commit/47c1a39) | Add Tinka den Arend profile page with PPF APG styling |
+| 2 | [44c0fcf](https://github.com/ookgezellig/profiel-tinka/commit/44c0fcf) | Add research documentation, scripts, and additional assets |
+| 3 | [e81cf1f](https://github.com/ookgezellig/profiel-tinka/commit/e81cf1f) | Improve README and restructure repository |
+| 4 | [91f4ed4](https://github.com/ookgezellig/profiel-tinka/commit/91f4ed4) | Add hyperlinks to tools and screenshot sources in README |
+| 5 | [b90a8f6](https://github.com/ookgezellig/profiel-tinka/commit/b90a8f6) | Add license, SEO, accessibility docs and cleanup |
+| 6 | [fdfc839](https://github.com/ookgezellig/profiel-tinka/commit/fdfc839) | Implement WCAG 2.0 Level AA accessibility improvements |
+| 7 | [2672556](https://github.com/ookgezellig/profiel-tinka/commit/2672556) | Add time breakdown for project creation |
+| 8 | [6d760fb](https://github.com/ookgezellig/profiel-tinka/commit/6d760fb) | Add table of contents to README |
+| 9 | [1b6cfe6](https://github.com/ookgezellig/profiel-tinka/commit/1b6cfe6) | Add table of contents to index.html and update README TOC |
+| 10 | [917e3c0](https://github.com/ookgezellig/profiel-tinka/commit/917e3c0) | Clarify that README is also 100% AI-generated |
+| 11 | [020659e](https://github.com/ookgezellig/profiel-tinka/commit/020659e) | Add interactive features and extract CSS/JS to separate files |
+| 12 | [e4fe861](https://github.com/ookgezellig/profiel-tinka/commit/e4fe861) | Add CSS/JS and visual alt-tags to time breakdown |
+| 13 | [010cd28](https://github.com/ookgezellig/profiel-tinka/commit/010cd28) | Add dark mode, favicon, sticky TOC, lazy loading and other improvements |
+| 14 | [c1f14c1](https://github.com/ookgezellig/profiel-tinka/commit/c1f14c1) | Add complete English version of the profile page |
+| 15 | [bf7b585](https://github.com/ookgezellig/profiel-tinka/commit/bf7b585) | Add interactive carousel, disclaimer, and update screenshots |
+| 16 | [d9a58d4](https://github.com/ookgezellig/profiel-tinka/commit/d9a58d4) | Fix desktop whitespace and dark mode contrast |
 
 ---
 
