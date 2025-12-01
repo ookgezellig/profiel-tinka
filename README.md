@@ -126,9 +126,11 @@ De website is in **meerdere iteratieve stappen** gegenereerd door [Claude Code](
 | Herstructurering en cleanup | ~15 min |
 | SEO, licentie en meta tags | ~10 min |
 | WCAG 2.0 toegankelijkheid | ~15 min |
-| **Totaal** | **~1 uur 55 min** |
+| CSS/JS afsplitsen en interactieve features | ~20 min |
+| Visuele alt-tags toevoegen | ~10 min |
+| **Totaal** | **~2 uur 25 min** |
 
-*Gemeten op basis van git commit timestamps (17:33 - 18:47) plus geschatte tijd voor voorbereidend onderzoek.*
+*Gemeten op basis van git commit timestamps plus geschatte tijd voor voorbereidend onderzoek en latere iteraties.*
 
 ---
 
