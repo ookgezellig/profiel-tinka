@@ -10,6 +10,18 @@ Een compleet profiel van Tinka den Arend, werkgeversvoorzitter PPF APG en Hoofd 
 
 ---
 
+## Inhoudsopgave
+
+- [Over dit project](#over-dit-project)
+- [Onderzoeksproces](#onderzoeksproces)
+- [Bestandsstructuur](#bestandsstructuur)
+- [Technische details](#technische-details)
+- [Toegankelijkheid en compliance](#toegankelijkheid-en-compliance)
+- [Disclaimer](#disclaimer)
+- [Links](#links)
+
+---
+
 ## Over dit project
 
 Dit profiel is samengesteld op basis van openbare bronnen om een compleet overzicht te geven van de carrière en activiteiten van Tinka den Arend in de Nederlandse pensioensector.
