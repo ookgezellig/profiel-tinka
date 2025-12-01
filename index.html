@@ -445,6 +445,41 @@
             margin-bottom: 12px;
         }
 
+        /* Table of Contents */
+        .toc {
+            background: var(--ppf-bg-light);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .toc ol {
+            columns: 2;
+            column-gap: 32px;
+            margin-bottom: 0;
+        }
+
+        .toc li {
+            margin-bottom: 6px;
+        }
+
+        .toc a {
+            color: var(--ppf-blue);
+        }
+
+        @media (max-width: 768px) {
+            .toc ol {
+                columns: 1;
+            }
+        }
+
         /* Horizontal rule */
         hr {
             border: none;
@@ -668,8 +703,32 @@
 
         <hr>
 
+        <!-- Table of Contents -->
+        <nav class="toc" aria-label="Inhoudsopgave">
+            <h2 id="inhoudsopgave">Inhoudsopgave</h2>
+            <ol>
+                <li><a href="#activiteiten-2025">Activiteiten en prestaties in 2025</a></li>
+                <li><a href="#persoonlijke-gegevens">Persoonlijke gegevens</a></li>
+                <li><a href="#huidige-functies">Huidige functies</a></li>
+                <li><a href="#carriere">Carrière overzicht</a></li>
+                <li><a href="#apg-werk">Werkzaamheden bij APG</a></li>
+                <li><a href="#ppf-apg-taken">Bestuurlijke taken bij PPF APG</a></li>
+                <li><a href="#publicaties">Publicaties & interviews</a></li>
+                <li><a href="#spreekbeurten">Spreekbeurten & conferenties</a></li>
+                <li><a href="#prijzen">Prijzen & erkenning</a></li>
+                <li><a href="#ppf-apg-context">PPF APG: Context en prestaties</a></li>
+                <li><a href="#dnb-register">DNB Register</a></li>
+                <li><a href="#documenten">Relevante documenten</a></li>
+                <li><a href="#expertise">Expertisegebieden</a></li>
+                <li><a href="#fotos">Foto's & screenshots</a></li>
+                <li><a href="#bronnen">Bronnen</a></li>
+            </ol>
+        </nav>
+
+        <hr>
+
         <!-- 2025 Activities -->
-        <h2>Activiteiten en Prestaties in 2025</h2>
+        <h2 id="activiteiten-2025">Activiteiten en Prestaties in 2025</h2>
 
         <p>Het jaar 2025 markeert een hoogtepunt in de carrière van Tinka den Arend, met PPF APG als een van de pioniers in de Nederlandse pensioentransitie.</p>
 
@@ -745,7 +804,7 @@
         <hr>
 
         <!-- Personal Data -->
-        <h2>Persoonlijke Gegevens</h2>
+        <h2 id="persoonlijke-gegevens">Persoonlijke Gegevens</h2>
         <table>
             <tbody>
                 <tr>
@@ -770,7 +829,7 @@
         <hr>
 
         <!-- Current Positions -->
-        <h2>Huidige Functies</h2>
+        <h2 id="huidige-functies">Huidige Functies</h2>
         <table>
             <thead>
                 <tr>
@@ -796,7 +855,7 @@
         <hr>
 
         <!-- Career Overview -->
-        <h2>Carrière Overzicht</h2>
+        <h2 id="carriere">Carrière Overzicht</h2>
         <table>
             <thead>
                 <tr>
@@ -842,7 +901,7 @@
         <hr>
 
         <!-- APG Work -->
-        <h2>Werkzaamheden bij APG</h2>
+        <h2 id="apg-werk">Werkzaamheden bij APG</h2>
 
         <h3>Team Policy and Public Affairs</h3>
         <p>Als Hoofd van het team Policy and Public Affairs bij APG geeft Tinka den Arend leiding aan een team dat strategisch advies geeft aan:</p>
@@ -883,7 +942,7 @@
         <hr>
 
         <!-- Board Tasks at PPF APG -->
-        <h2>Bestuurlijke Taken bij PPF APG</h2>
+        <h2 id="ppf-apg-taken">Bestuurlijke Taken bij PPF APG</h2>
         <table>
             <thead>
                 <tr>
@@ -915,7 +974,7 @@
         <hr>
 
         <!-- Publications & Interviews -->
-        <h2>Publicaties & Interviews</h2>
+        <h2 id="publicaties">Publicaties & Interviews</h2>
         <table>
             <thead>
                 <tr>
@@ -951,7 +1010,7 @@
         <hr>
 
         <!-- Conferences -->
-        <h2>Spreekbeurten & Conferenties</h2>
+        <h2 id="spreekbeurten">Spreekbeurten & Conferenties</h2>
         <table>
             <thead>
                 <tr>
@@ -987,7 +1046,7 @@
         <hr>
 
         <!-- Awards -->
-        <h2>Prijzen & Erkenning</h2>
+        <h2 id="prijzen">Prijzen & Erkenning</h2>
         <table>
             <thead>
                 <tr>
@@ -1008,7 +1067,7 @@
         <hr>
 
         <!-- PPF APG Context -->
-        <h2>PPF APG: Context en Prestaties</h2>
+        <h2 id="ppf-apg-context">PPF APG: Context en Prestaties</h2>
 
         <p>PPF APG (Personeelspensioenfonds APG) is het pensioenfonds voor medewerkers van APG zelf.</p>
 
@@ -1067,7 +1126,7 @@
         <hr>
 
         <!-- DNB Register -->
-        <h2>DNB Register</h2>
+        <h2 id="dnb-register">DNB Register</h2>
         <table>
             <tbody>
                 <tr>
@@ -1092,7 +1151,7 @@
         <hr>
 
         <!-- Documents -->
-        <h2>Relevante Documenten</h2>
+        <h2 id="documenten">Relevante Documenten</h2>
 
         <h3>Jaarverslagen PPF APG</h3>
         <table>
@@ -1149,7 +1208,7 @@
         <hr>
 
         <!-- Expertise -->
-        <h2>Expertisegebieden</h2>
+        <h2 id="expertise">Expertisegebieden</h2>
         <div class="info-grid">
             <div class="info-card">
                 <h4>Pensioenwetgeving</h4>
@@ -1180,7 +1239,7 @@
         <hr>
 
         <!-- Image Gallery -->
-        <h2>Foto's & Screenshots</h2>
+        <h2 id="fotos">Foto's & Screenshots</h2>
         <p>Visuele documentatie van bronnen en profilepagina's:</p>
 
         <div class="image-gallery">
@@ -1225,7 +1284,7 @@
         <hr>
 
         <!-- Sources -->
-        <h2>Bronnen</h2>
+        <h2 id="bronnen">Bronnen</h2>
         <p>Alle informatie is verzameld uit openbare bronnen via Exa MCP search op 1 december 2025:</p>
 
         <h4>Primaire bronnen</h4>

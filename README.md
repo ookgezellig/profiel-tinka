@@ -14,6 +14,7 @@ Een compleet profiel van Tinka den Arend, werkgeversvoorzitter PPF APG en Hoofd 
 
 - [Over dit project](#over-dit-project)
 - [Onderzoeksproces](#onderzoeksproces)
+- [Tijdsbesteding](#tijdsbesteding)
 - [Bestandsstructuur](#bestandsstructuur)
 - [Technische details](#technische-details)
 - [Toegankelijkheid en compliance](#toegankelijkheid-en-compliance)
@@ -89,7 +90,7 @@ De `index.html` is gegenereerd door [Claude Code](https://claude.ai/claude-code)
 
 **100% AI-gegenereerd**: Dit volledige profiel - van bronnenonderzoek tot HTML-generatie - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code of content. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het proces.
 
-### Tijdsbesteding
+## Tijdsbesteding
 
 | Fase | Geschatte tijd |
 |------|----------------|
