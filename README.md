@@ -78,17 +78,40 @@ Screenshots zijn gemaakt met Playwright browser automation van:
 - [The Org organisatieprofiel](https://theorg.com/org/werkenbijapg/org-chart/tinka-den-arend)
 - [CFA Society ALM Congres pagina](https://cfasociety.org/netherlands)
 
-### 6. HTML-generatie
+### 6. HTML-generatie (meerdere stappen)
 
-De `index.html` is gegenereerd door [Claude Code](https://claude.ai/claude-code) op basis van het markdown-bronbestand `research/tinka-den-arend-profiel.md`. Dit bestand bevat alle verzamelde informatie in gestructureerde vorm. Claude Code heeft deze markdown omgezet naar een volledig gestylede HTML-pagina met:
+De website is in **meerdere iteratieve stappen** gegenereerd door [Claude Code](https://claude.ai/claude-code):
 
+**Stap 1: Basis HTML vanuit Markdown**
+- Bronbestand: `research/tinka-den-arend-profiel.md`
+- Eerste conversie naar HTML met PPF APG styling
+
+**Stap 2: Styling & SEO**
 - Styling gebaseerd op [PPF APG website](https://www.ppf-apg.nl/) design system
 - Kleuren: PPF Blue (#004899), PPF Yellow (#c9d200)
 - Font: Source Sans 3 (Google Fonts)
-- Responsief ontwerp voor mobile/desktop
 - SEO-optimalisatie (meta tags, Open Graph, Schema.org)
 
-**100% AI-gegenereerd**: Dit volledige project - van bronnenonderzoek tot HTML-generatie én deze README - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code, content of documentatie. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het proces.
+**Stap 3: Toegankelijkheid (WCAG 2.0)**
+- Skip-to-content link
+- ARIA labels en roles
+- Focus states voor keyboard navigatie
+- Minimum touch targets (44x44px)
+
+**Stap 4: Interactieve elementen**
+- CSS en JavaScript verplaatst naar aparte bestanden (`styles.css`, `script.js`)
+- Scroll-animaties en fade-in effecten
+- Lightbox voor afbeeldingen
+- Leesvoortgangsindicator
+- "Terug naar boven" knop
+- Sparkle-effect op award badges
+- Smooth scrolling
+
+**Stap 5: Visuele alt-tags**
+- Uitgebreide alt-teksten op alle afbeeldingen
+- Visuele beschrijvingen in figcaptions naast de img-elementen
+
+**100% AI-gegenereerd**: Dit volledige project - van bronnenonderzoek tot HTML-generatie, interactieve features én deze README - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code, content of documentatie. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het iteratieve proces.
 
 ## Tijdsbesteding
 
@@ -114,7 +137,11 @@ De `index.html` is gegenereerd door [Claude Code](https://claude.ai/claude-code)
 ```
 profiel-tinka/
 ├── index.html                          # Gepubliceerde profielpagina
+├── styles.css                          # Externe stylesheet (PPF APG design system)
+├── script.js                           # Interactieve JavaScript functionaliteit
 ├── README.md                           # Dit bestand
+├── LICENSE                             # CC BY-NC-ND 4.0 licentie
+├── .gitignore                          # Git ignore configuratie
 ├── screenshots/                        # Afbeeldingen voor de website
 │   ├── 01_ppf_apg_tinka_profiel.png
 │   ├── 02_ppf_apg_homepage.png

@@ -1,0 +1,210 @@
+/* PPF APG Profiel - Interactive Features */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Update URL without jumping
+                history.pushState(null, null, this.getAttribute('href'));
+            }
+        });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections and cards
+    document.querySelectorAll('h2, .info-card, .gallery-item, .highlight-box, table').forEach(el => {
+        el.classList.add('animate-ready');
+        observer.observe(el);
+    });
+
+    // Gallery image lightbox
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    galleryImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', 'Klik om te vergroten: ' + (img.alt || 'afbeelding'));
+
+        const openLightbox = () => {
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.setAttribute('role', 'dialog');
+            lightbox.setAttribute('aria-modal', 'true');
+            lightbox.setAttribute('aria-label', 'Afbeelding vergroot');
+            lightbox.innerHTML = `
+                <button class="lightbox-close" aria-label="Sluiten">&times;</button>
+                <img src="${img.src}" alt="${img.alt}">
+            `;
+            document.body.appendChild(lightbox);
+            document.body.style.overflow = 'hidden';
+
+            // Focus trap
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            closeBtn.focus();
+
+            const closeLightbox = () => {
+                lightbox.classList.add('lightbox-closing');
+                setTimeout(() => {
+                    document.body.removeChild(lightbox);
+                    document.body.style.overflow = '';
+                    img.focus();
+                }, 200);
+            };
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function escHandler(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                    document.removeEventListener('keydown', escHandler);
+                }
+            });
+
+            // Animate in
+            requestAnimationFrame(() => {
+                lightbox.classList.add('lightbox-visible');
+            });
+        };
+
+        img.addEventListener('click', openLightbox);
+        img.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox();
+            }
+        });
+    });
+
+    // Award badge sparkle effect
+    const awardBadges = document.querySelectorAll('.award-badge');
+    awardBadges.forEach(badge => {
+        badge.addEventListener('mouseenter', () => {
+            badge.classList.add('sparkle');
+        });
+        badge.addEventListener('mouseleave', () => {
+            badge.classList.remove('sparkle');
+        });
+    });
+
+    // Reading progress indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'reading-progress';
+    progressBar.setAttribute('role', 'progressbar');
+    progressBar.setAttribute('aria-label', 'Leesvoortgang');
+    progressBar.setAttribute('aria-valuemin', '0');
+    progressBar.setAttribute('aria-valuemax', '100');
+    document.body.prepend(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        progressBar.style.width = progress + '%';
+        progressBar.setAttribute('aria-valuenow', Math.round(progress));
+    });
+
+    // Back to top button
+    const backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.innerHTML = '↑';
+    backToTop.setAttribute('aria-label', 'Terug naar boven');
+    backToTop.setAttribute('title', 'Terug naar boven');
+    document.body.appendChild(backToTop);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Table row highlight on hover (enhanced)
+    document.querySelectorAll('table tbody tr').forEach(row => {
+        row.addEventListener('mouseenter', () => {
+            row.style.transform = 'scale(1.01)';
+            row.style.boxShadow = '0 2px 8px rgba(0, 72, 153, 0.1)';
+        });
+        row.addEventListener('mouseleave', () => {
+            row.style.transform = '';
+            row.style.boxShadow = '';
+        });
+    });
+
+    // Profile card parallax effect
+    const profileCard = document.querySelector('.profile-card');
+    if (profileCard) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const rate = scrolled * -0.1;
+            if (scrolled < 400) {
+                profileCard.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    }
+
+    // Typing effect for the main quote
+    const quote = document.querySelector('.profile-card blockquote');
+    if (quote) {
+        const originalText = quote.textContent;
+        const typingSpeed = 30;
+        let charIndex = 0;
+
+        // Only animate if element is in viewport initially
+        const rect = quote.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            quote.textContent = '';
+            quote.style.minHeight = '3em';
+
+            function typeWriter() {
+                if (charIndex < originalText.length) {
+                    quote.textContent += originalText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, typingSpeed);
+                }
+            }
+
+            setTimeout(typeWriter, 500);
+        }
+    }
+
+    // Console easter egg
+    console.log('%c🏆 PPF APG - Pensioenfonds van het Jaar 2025',
+        'font-size: 20px; color: #004899; font-weight: bold;');
+    console.log('%cDit profiel is 100% AI-gegenereerd met Claude Code',
+        'font-size: 12px; color: #666;');
+
+});
