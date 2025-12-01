@@ -15,7 +15,7 @@ Deze activiteiten zijn niet zichtbaar in de commit geschiedenis maar vormden de 
 
 | Datum | Commits | Belangrijkste wijzigingen |
 |-------|---------|---------------------------|
-| 1 dec 2025 | 16 | Van eerste HTML tot volledige tweetalige site |
+| 1 dec 2025 | 20 | Van eerste HTML tot volledige tweetalige site met documentatie |
 
 ---
 
@@ -262,6 +262,70 @@ Document estimated time spent on each phase:
 - Use brighter colors for dark mode: blue #6ab0e8, yellow #f0e68c
 - Add specific dark mode blockquote styling for better readability
 - Adjust sticky TOC sidebar dimensions
+
+---
+
+## Commit 17: Voordelen agentic bouwen en UI fixes
+**Datum:** 2025-12-01 23:32
+**Commit:** [6600b02](https://github.com/ookgezellig/profiel-tinka/commit/6600b02)
+
+#### Add agentic building benefits, build log, and UI fixes
+
+**Documentatie:**
+- Add "Voordelen van agentic bouwen" section to README with 6 benefits
+- Create BUILD-LOGBOEK.md with complete commit history (16 commits)
+- Translate "How to Replicate" to "Zelf repliceren" in README
+- Fix inconsistency about manual intervention in README
+
+**UI fixes:**
+- Further reduce whitespace for widescreen desktop
+- Fix dark mode button contrast (hardcode #1a1a1a for yellow buttons)
+- Restore carousel lightbox functionality with caption and visual-alt display
+
+---
+
+## Commit 18: MCP documentatie uitbreiden
+**Datum:** 2025-12-01 23:35
+**Commit:** [f8d26f5](https://github.com/ookgezellig/profiel-tinka/commit/f8d26f5)
+
+#### Expand MCP server installation instructions in README
+
+- Add links to official Claude Code MCP documentation
+- Add CLI installation commands for Exa and Playwright MCP
+- Add .mcp.json configuration example
+- Add Windows-specific instructions (cmd /c wrapper)
+- Add verification step (/mcp command)
+
+---
+
+## Commit 19: README vereenvoudigen
+**Datum:** 2025-12-01 23:38
+**Commit:** [e07bb33](https://github.com/ookgezellig/profiel-tinka/commit/e07bb33)
+
+#### Simplify README and adjust BUILD-LOGBOEK heading levels
+
+- Remove commit table from README (too verbose, link to BUILD-LOGBOEK suffices)
+- Demote commit message headings from h3 to h4 in BUILD-LOGBOEK.md
+
+---
+
+## Commit 20: Herstructurering en TECHNISCH.md
+**Datum:** 2025-12-01 23:55
+**Commit:** [fd6048e](https://github.com/ookgezellig/profiel-tinka/commit/fd6048e)
+
+#### Restructure README, add TECHNISCH.md, and UI improvements
+
+**Documentatie:**
+- Restructure README with new section order
+- Condense English Summary to single paragraph
+- Move technical sections to new TECHNISCH.md
+- Reorder "Voordelen van agentic bouwen" (Snelle prototyping first, Commit messages last)
+- Add WCAG 2.0 link to accessibility section
+
+**UI fixes:**
+- Optimize sticky TOC sidebar for widescreen (max-width 1400px, smaller sidebar)
+- Remove table row hover animations (scale/shadow effects)
+- Expand The Org URL in both index.html and index-en.html
 
 ---
 
