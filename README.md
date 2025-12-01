@@ -88,7 +88,7 @@ De `index.html` is gegenereerd door [Claude Code](https://claude.ai/claude-code)
 - Responsief ontwerp voor mobile/desktop
 - SEO-optimalisatie (meta tags, Open Graph, Schema.org)
 
-**100% AI-gegenereerd**: Dit volledige profiel - van bronnenonderzoek tot HTML-generatie - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code of content. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het proces.
+**100% AI-gegenereerd**: Dit volledige project - van bronnenonderzoek tot HTML-generatie én deze README - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code, content of documentatie. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het proces.
 
 ## Tijdsbesteding
 
