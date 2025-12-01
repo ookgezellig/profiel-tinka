@@ -169,9 +169,10 @@ De website is in **meerdere iteratieve stappen** gegenereerd door [Claude Code](
 | Dark mode, favicon, sticky TOC, lazy loading | ~25 min |
 | Engelse versie website (index-en.html) | ~20 min |
 | README updates (English summary, How to replicate) | ~15 min |
-| **Totaal** | **~3 uur 25 min** |
+| Screenshot carousel, disclaimer, cleanup | ~15 min |
+| **Totaal** | **~3 uur 40 min** |
 
-*Gemeten op basis van git commit timestamps plus geschatte tijd voor voorbereidend onderzoek en latere iteraties.*
+*Gemeten op basis van actieve werktijd. Screenshots werden handmatig bijgesneden door de gebruiker om cookie-banners te verwijderen.*
 
 ---
 
@@ -294,7 +295,8 @@ De HTML is gestyled naar het [PPF APG](https://www.ppf-apg.nl/) design system:
 - **Dark mode**: Toggle tussen licht/donker met systeemvoorkeur detectie en localStorage persistentie
 - **Meertalig**: Nederlandse en Engelse versie met taalwissel in header
 - **Lazy loading**: Afbeeldingen worden pas geladen wanneer ze in beeld komen
-- **Interactief**: Lightbox galerij, scroll-animaties, leesvoortgang indicator
+- **Interactief**: Screenshot carousel met swipe-support, scroll-animaties, leesvoortgang indicator
+- **Disclaimer**: Duidelijke vermelding dat dit geen officiële PPF APG pagina is
 
 ---
 
