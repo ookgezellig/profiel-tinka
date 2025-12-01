@@ -1,5 +1,9 @@
 # Profiel Tinka den Arend
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://ookgezellig.github.io/profiel-tinka/)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![AI Generated](https://img.shields.io/badge/AI-Generated-blue)](https://claude.ai/)
+
 Een compleet profiel van Tinka den Arend, werkgeversvoorzitter PPF APG en Hoofd Policy & Public Affairs bij APG.
 
 **Live website:** https://ookgezellig.github.io/profiel-tinka/
@@ -62,11 +66,16 @@ Screenshots zijn gemaakt met Playwright browser automation van:
 - [CFA Society ALM Congres pagina](https://cfasociety.org/netherlands)
 
 ### 6. HTML-generatie
-Het HTML-bestand is gegenereerd met:
+
+De `index.html` is gegenereerd door [Claude Code](https://claude.ai/claude-code) op basis van het markdown-bronbestand `research/tinka-den-arend-profiel.md`. Dit bestand bevat alle verzamelde informatie in gestructureerde vorm. Claude Code heeft deze markdown omgezet naar een volledig gestylede HTML-pagina met:
+
 - Styling gebaseerd op [PPF APG website](https://www.ppf-apg.nl/) design system
 - Kleuren: PPF Blue (#004899), PPF Yellow (#c9d200)
 - Font: Source Sans 3 (Google Fonts)
 - Responsief ontwerp voor mobile/desktop
+- SEO-optimalisatie (meta tags, Open Graph, Schema.org)
+
+**100% AI-gegenereerd**: Dit volledige profiel - van bronnenonderzoek tot HTML-generatie - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code of content. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het proces.
 
 ---
 
@@ -91,7 +100,6 @@ profiel-tinka/
 │   └── tinka_profile_photo.jpg
 ├── research/                           # Onderzoeksmateriaal
 │   ├── tinka-den-arend-profiel.md      # Bronbestand in Markdown
-│   ├── tinka-den-arend-profiel.html    # HTML bronbestand
 │   └── scripts/                        # Scripts voor dataverzameling
 │       ├── capture_screenshots.py      # Screenshot verzameling (Playwright)
 │       ├── create_pptx.py              # PowerPoint generatie
@@ -120,6 +128,33 @@ De HTML is gestyled naar het [PPF APG](https://www.ppf-apg.nl/) design system:
 - Responsive grid layouts
 - Print-friendly styling
 - Accessible markup
+
+---
+
+## Toegankelijkheid en compliance
+
+### Responsief ontwerp
+De website is volledig responsief en werkt op alle schermformaten:
+- **Desktop**: Volledige layout met navigatie en sidebar
+- **Tablet/mobiel** (< 768px): Aangepaste layout met gestapelde elementen, grotere touch-targets
+- **Print**: Speciale print-stylesheet zonder navigatie-elementen
+
+### WCAG 2.0 toegankelijkheid
+De pagina volgt de basis WCAG 2.0 richtlijnen:
+- Semantische HTML-structuur (`<header>`, `<nav>`, `<main>`, `<footer>`)
+- Alt-teksten op alle afbeeldingen
+- Voldoende kleurcontrast (PPF Blue #004899 op wit)
+- Leesbare lettergrootte (16px basis, schaalbaar)
+- Logische koppenstructuur (h1 → h2 → h3)
+- Links zijn duidelijk herkenbaar
+
+### AVG/GDPR compliance
+Deze website bevat persoonsgegevens van een publiek figuur:
+- **Rechtsgrondslag**: Legitiem belang - alle informatie is reeds openbaar gepubliceerd door officiële bronnen (PPF APG, APG, DNB Register)
+- **Geen verwerking van bijzondere persoonsgegevens**: Alleen zakelijke/professionele informatie
+- **Bronvermelding**: Alle bronnen zijn expliciet vermeld en gelinkt
+- **Geen cookies of tracking**: De website plaatst geen cookies en verzamelt geen gebruikersdata
+- **Contactmogelijkheid**: Bij vragen of verzoeken tot verwijdering kan contact worden opgenomen via GitHub Issues
 
 ---
 
