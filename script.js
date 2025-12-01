@@ -2,6 +2,47 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const htmlElement = document.documentElement;
+
+    // Check for saved preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersDark) {
+        htmlElement.setAttribute('data-theme', 'dark');
+    }
+
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Announce change for screen readers
+            const announcement = newTheme === 'dark' ? 'Donkere modus ingeschakeld' : 'Lichte modus ingeschakeld';
+            const ariaLive = document.createElement('div');
+            ariaLive.setAttribute('role', 'status');
+            ariaLive.setAttribute('aria-live', 'polite');
+            ariaLive.className = 'sr-only';
+            ariaLive.textContent = announcement;
+            document.body.appendChild(ariaLive);
+            setTimeout(() => ariaLive.remove(), 1000);
+        });
+    }
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            htmlElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

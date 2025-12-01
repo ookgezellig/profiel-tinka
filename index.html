@@ -63,6 +63,9 @@
     }
     </script>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -85,12 +88,19 @@
                 <div class="logo-subtitle">Personeelspensioenfonds</div>
             </div>
         </a>
-        <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
-            <a href="https://www.ppf-apg.nl/pensioen-bij-ppf-apg">Pensioen bij PPF APG</a>
-            <a href="https://www.ppf-apg.nl/uw-situatie-verandert">Uw situatie verandert</a>
-            <a href="https://www.ppf-apg.nl/over-ppf-apg">Over PPF APG</a>
-            <a href="https://www.ppf-apg.nl/contact">Service en contact</a>
-        </nav>
+        <div class="header-right">
+            <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
+                <a href="https://www.ppf-apg.nl/pensioen-bij-ppf-apg">Pensioen bij PPF APG</a>
+                <a href="https://www.ppf-apg.nl/uw-situatie-verandert">Uw situatie verandert</a>
+                <a href="https://www.ppf-apg.nl/over-ppf-apg">Over PPF APG</a>
+                <a href="https://www.ppf-apg.nl/contact">Service en contact</a>
+            </nav>
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Schakel donkere modus in/uit" title="Donkere modus">
+                <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+                <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+            </button>
+            <a href="index-en.html" class="lang-switch" aria-label="Switch to English">EN</a>
+        </div>
     </header>
 
     <!-- Breadcrumb -->
@@ -688,39 +698,39 @@
 
         <div class="image-gallery">
             <figure class="gallery-item">
-                <img src="screenshots/01_ppf_apg_tinka_profiel.png" alt="Screenshot van de officiële PPF APG profielpagina van Tinka den Arend, met haar foto, functietitel als werkgeversvoorzitter, en een citaat over haar visie op het pensioenfonds">
+                <img src="screenshots/01_ppf_apg_tinka_profiel.png" alt="Screenshot van de officiële PPF APG profielpagina van Tinka den Arend, met haar foto, functietitel als werkgeversvoorzitter, en een citaat over haar visie op het pensioenfonds" loading="lazy">
                 <figcaption>PPF APG officiële profielpagina <span class="visual-alt">(Screenshot: profielfoto met blauwe PPF APG huisstijl, citaat en contactknop)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/08_ppf_apg_bestuur.png" alt="Screenshot van de PPF APG bestuurspagina met overzicht van alle bestuursleden inclusief Tinka den Arend als werkgeversvoorzitter">
+                <img src="screenshots/08_ppf_apg_bestuur.png" alt="Screenshot van de PPF APG bestuurspagina met overzicht van alle bestuursleden inclusief Tinka den Arend als werkgeversvoorzitter" loading="lazy">
                 <figcaption>PPF APG Bestuurspagina <span class="visual-alt">(Screenshot: grid met portretfoto's van bestuursleden, namen en functies)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/10_ppf_apg_nieuws_award.png" alt="Screenshot van PPF APG nieuwsbericht over het winnen van de Pensioen Pro Award Pensioenfonds van het Jaar 2025, met feestelijke foto van de prijsuitreiking">
+                <img src="screenshots/10_ppf_apg_nieuws_award.png" alt="Screenshot van PPF APG nieuwsbericht over het winnen van de Pensioen Pro Award Pensioenfonds van het Jaar 2025, met feestelijke foto van de prijsuitreiking" loading="lazy">
                 <figcaption>PPF APG wint Pensioenfonds van het Jaar Award <span class="visual-alt">(Screenshot: nieuwsartikel met foto van prijsuitreiking en gouden trofee)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/04_apg_award_article.png" alt="Screenshot van APG nieuwsartikel over PPF APG als winnaar van de Pensioen Pro Award, met begeleidende tekst over de prestaties">
+                <img src="screenshots/04_apg_award_article.png" alt="Screenshot van APG nieuwsartikel over PPF APG als winnaar van de Pensioen Pro Award, met begeleidende tekst over de prestaties" loading="lazy">
                 <figcaption>APG nieuwsartikel over de Award <span class="visual-alt">(Screenshot: APG corporate nieuwspagina met headline en samenvatting)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/05_pensioenpro_podcast.png" alt="Screenshot van de PensioenPro podcast pagina met aflevering 'Twee keer invaren' waarin Tinka den Arend wordt geïnterviewd over de pensioentransitie">
+                <img src="screenshots/05_pensioenpro_podcast.png" alt="Screenshot van de PensioenPro podcast pagina met aflevering 'Twee keer invaren' waarin Tinka den Arend wordt geïnterviewd over de pensioentransitie" loading="lazy">
                 <figcaption>PensioenPro Podcast "Twee keer invaren" <span class="visual-alt">(Screenshot: podcast player met afbeelding, titel en afspeelknop)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/06_theorg_profile.png" alt="Screenshot van The Org organisatieprofiel van Tinka den Arend bij APG, met haar positie in het organogram als Head of Policy and Public Affairs">
+                <img src="screenshots/06_theorg_profile.png" alt="Screenshot van The Org organisatieprofiel van Tinka den Arend bij APG, met haar positie in het organogram als Head of Policy and Public Affairs" loading="lazy">
                 <figcaption>The Org organisatieprofiel <span class="visual-alt">(Screenshot: organogram met hiërarchische structuur en profielfoto)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/07_cfa_alm_congres.png" alt="Screenshot van de CFA Society Netherlands ALM Congres 2025 pagina waar Tinka den Arend als panellid staat vermeld voor de sessie over beleggen in het nieuwe pensioenstelsel">
+                <img src="screenshots/07_cfa_alm_congres.png" alt="Screenshot van de CFA Society Netherlands ALM Congres 2025 pagina waar Tinka den Arend als panellid staat vermeld voor de sessie over beleggen in het nieuwe pensioenstelsel" loading="lazy">
                 <figcaption>CFA Society ALM Congres 2025 <span class="visual-alt">(Screenshot: evenementpagina met programma, sprekers en registratieknop)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/09_dnb_register.png" alt="Screenshot van het DNB openbaar register met de officiële registratie van Stichting Personeelspensioenfonds APG, relatienummer 02392">
+                <img src="screenshots/09_dnb_register.png" alt="Screenshot van het DNB openbaar register met de officiële registratie van Stichting Personeelspensioenfonds APG, relatienummer 02392" loading="lazy">
                 <figcaption>DNB Register PPF APG <span class="visual-alt">(Screenshot: DNB database entry met statutaire naam en registratiedetails)</span></figcaption>
             </figure>
             <figure class="gallery-item">
-                <img src="screenshots/02_ppf_apg_homepage.png" alt="Screenshot van de PPF APG homepage met navigatie, hero-banner en inlogmogelijkheid voor deelnemers">
+                <img src="screenshots/02_ppf_apg_homepage.png" alt="Screenshot van de PPF APG homepage met navigatie, hero-banner en inlogmogelijkheid voor deelnemers" loading="lazy">
                 <figcaption>PPF APG Homepage <span class="visual-alt">(Screenshot: website header met logo, menu en welkomstbanner)</span></figcaption>
             </figure>
         </div>
@@ -772,7 +782,13 @@
                 <a href="https://www.ppf-apg.nl/over-deze-website/disclaimer">Disclaimer</a>
                 <a href="https://www.ppf-apg.nl/over-deze-website/privacyverklaring">Privacy</a>
                 <a href="https://www.ppf-apg.nl/over-deze-website/cookieverklaring">Cookies</a>
-                <a href="https://www.ppf-apg.nl/about-ppf-apg">English</a>
+                <a href="index-en.html">English</a>
+            </div>
+
+            <div class="last-updated">
+                <span>Laatst bijgewerkt: <time id="lastUpdated" datetime="2025-12-01">1 december 2025</time></span>
+                <span class="separator">|</span>
+                <span>100% AI-gegenereerd met <a href="https://claude.ai/claude-code" target="_blank">Claude Code</a></span>
             </div>
         </div>
     </footer>
