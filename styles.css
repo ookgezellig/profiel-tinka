@@ -13,18 +13,18 @@
     --ppf-border: #dddddd;
 }
 
-/* Dark mode colors */
+/* Dark mode colors - WCAG 2.1 AA compliant (min 4.5:1 contrast) */
 [data-theme="dark"] {
-    --ppf-blue: #5a9fd4;
-    --ppf-blue-dark: #004899;
-    --ppf-yellow: #d4e157;
-    --ppf-yellow-hover: #c0ca33;
-    --ppf-text: #e0e0e0;
-    --ppf-text-light: #b0b0b0;
+    --ppf-blue: #6ab0e8;
+    --ppf-blue-dark: #4a90c8;
+    --ppf-yellow: #f0e68c;
+    --ppf-yellow-hover: #e6dc78;
+    --ppf-text: #f0f0f0;
+    --ppf-text-light: #d0d0d0;
     --ppf-bg-light: #2a2a2a;
     --ppf-bg-footer: #1a1a1a;
     --ppf-white: #1e1e1e;
-    --ppf-border: #404040;
+    --ppf-border: #505050;
 }
 
 [data-theme="dark"] body {
@@ -37,7 +37,7 @@
 }
 
 [data-theme="dark"] .logo-text {
-    color: #5a9fd4;
+    color: #6ab0e8;
 }
 
 [data-theme="dark"] th {
@@ -50,7 +50,7 @@
 
 [data-theme="dark"] .highlight-box {
     background: linear-gradient(135deg, #1a2a3a 0%, #1a2a1a 100%);
-    border-color: #5a9fd4;
+    border-color: #6ab0e8;
 }
 
 [data-theme="dark"] .award-badge {
@@ -59,6 +59,26 @@
 
 [data-theme="dark"] .lightbox {
     background: rgba(0, 0, 0, 0.95);
+}
+
+/* Dark mode blockquote - higher contrast text */
+[data-theme="dark"] blockquote {
+    background: #252525;
+    color: #e8e8e8;
+}
+
+[data-theme="dark"] blockquote em {
+    color: #c8c8c8;
+}
+
+/* Dark mode profile card quote */
+[data-theme="dark"] .profile-card blockquote {
+    color: #8bc4f0;
+}
+
+/* Dark mode visual-alt text */
+[data-theme="dark"] .visual-alt {
+    color: #b8b8b8;
 }
 
 * {
@@ -298,9 +318,9 @@ h2 {
     color: var(--ppf-blue);
     font-size: 1.5rem;
     font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
     border-bottom: 2px solid var(--ppf-yellow);
 }
 
@@ -308,20 +328,20 @@ h3 {
     color: var(--ppf-blue);
     font-size: 1.25rem;
     font-weight: 600;
-    margin-top: 24px;
-    margin-bottom: 12px;
+    margin-top: 20px;
+    margin-bottom: 8px;
 }
 
 h4 {
     color: var(--ppf-text);
     font-size: 1.1rem;
     font-weight: 600;
-    margin-top: 20px;
-    margin-bottom: 8px;
+    margin-top: 16px;
+    margin-bottom: 6px;
 }
 
 p {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 strong {
@@ -342,7 +362,7 @@ a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 16px 0 24px 0;
+    margin: 12px 0 16px 0;
     font-size: 15px;
 }
 
@@ -378,8 +398,8 @@ td a:focus {
 blockquote {
     background: var(--ppf-bg-light);
     border-left: 4px solid var(--ppf-yellow);
-    padding: 16px 20px;
-    margin: 16px 0;
+    padding: 14px 18px;
+    margin: 12px 0;
     font-style: italic;
     color: var(--ppf-text-light);
 }
@@ -393,12 +413,12 @@ blockquote em {
 
 /* Lists */
 ul, ol {
-    margin: 16px 0;
+    margin: 10px 0;
     padding-left: 24px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 /* Highlight box */
@@ -406,8 +426,8 @@ li {
     background: linear-gradient(135deg, #f0f7ff 0%, #e8f4e8 100%);
     border: 1px solid var(--ppf-blue);
     border-radius: 8px;
-    padding: 20px;
-    margin: 24px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
 }
 
 .highlight-box h3 {
@@ -433,8 +453,8 @@ li {
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin: 24px 0;
+    gap: 16px;
+    margin: 16px 0;
 }
 
 .info-card {
@@ -490,7 +510,7 @@ li {
 hr {
     border: none;
     border-top: 1px solid var(--ppf-border);
-    margin: 32px 0;
+    margin: 24px 0;
 }
 
 /* Footer */
@@ -868,9 +888,9 @@ hr {
 @media (min-width: 1200px) {
     .main-content {
         display: grid;
-        grid-template-columns: 1fr 280px;
-        gap: 40px;
-        max-width: 1200px;
+        grid-template-columns: 1fr 260px;
+        gap: 32px;
+        max-width: 1100px;
     }
 
     .toc {
@@ -880,6 +900,7 @@ hr {
         grid-column: 2;
         grid-row: 1 / span 100;
         margin: 0;
+        padding: 16px 20px;
     }
 
     .toc ol {
@@ -888,10 +909,12 @@ hr {
 
     .toc h2 {
         font-size: 1rem;
+        margin-bottom: 10px;
     }
 
     .toc li {
-        font-size: 14px;
+        font-size: 13px;
+        margin-bottom: 4px;
     }
 }
 
