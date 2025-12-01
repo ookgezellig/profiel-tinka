@@ -54,12 +54,12 @@ Dit profiel is verzameld via het volgende proces:
 
 ### 5. Screenshots
 Screenshots zijn gemaakt met Playwright browser automation van:
-- PPF APG website (profielpagina, bestuurspagina, nieuwsberichten)
-- APG website (nieuwsartikelen)
-- PensioenPro podcast pagina
-- DNB Register
-- The Org organisatieprofiel
-- CFA Society ALM Congres pagina
+- [PPF APG website](https://www.ppf-apg.nl/) (profielpagina, bestuurspagina, nieuwsberichten)
+- [APG website](https://www.apg.nl/) (nieuwsartikelen)
+- [PensioenPro podcast pagina](https://www.pensioenpro.nl/podcast)
+- [DNB Register](https://www.dnb.nl/openbaar-register/)
+- [The Org organisatieprofiel](https://theorg.com/org/werkenbijapg/org-chart/tinka-den-arend)
+- [CFA Society ALM Congres pagina](https://cfasociety.org/netherlands)
 
 ### 6. HTML-generatie
 Het HTML-bestand is gegenereerd met:
@@ -110,9 +110,9 @@ profiel-tinka/
 ## Technische details
 
 ### Tools gebruikt
-- **Exa MCP Search**: Web research en bronverzameling
-- **Playwright MCP**: Screenshots van bronwebsites
-- **Claude Code**: Markdown naar HTML conversie met custom styling
+- **[Exa MCP Search](https://exa.ai/)**: Web research en bronverzameling
+- **[Playwright MCP](https://playwright.dev/)**: Screenshots van bronwebsites
+- **[Claude Code](https://claude.ai/claude-code)**: Markdown naar HTML conversie met custom styling
 
 ### Styling
 De HTML is gestyled naar het [PPF APG](https://www.ppf-apg.nl/) design system:
