@@ -334,27 +334,6 @@ bedrijfswebsite en nieuwsartikelen. Gebruik de huisstijl van [BEDRIJF]."
 
 Het volledige build-logboek documenteert elke stap van de ontwikkeling van dit project. Bekijk het complete logboek in [BUILD-LOGBOEK.md](BUILD-LOGBOEK.md) of op de [GitHub commits pagina](https://github.com/ookgezellig/profiel-tinka/commits/main).
 
-### Overzicht commits (van oud naar nieuw)
-
-| # | Commit | Beschrijving |
-|---|--------|--------------|
-| 1 | [47c1a39](https://github.com/ookgezellig/profiel-tinka/commit/47c1a39) | Add Tinka den Arend profile page with PPF APG styling |
-| 2 | [44c0fcf](https://github.com/ookgezellig/profiel-tinka/commit/44c0fcf) | Add research documentation, scripts, and additional assets |
-| 3 | [e81cf1f](https://github.com/ookgezellig/profiel-tinka/commit/e81cf1f) | Improve README and restructure repository |
-| 4 | [91f4ed4](https://github.com/ookgezellig/profiel-tinka/commit/91f4ed4) | Add hyperlinks to tools and screenshot sources in README |
-| 5 | [b90a8f6](https://github.com/ookgezellig/profiel-tinka/commit/b90a8f6) | Add license, SEO, accessibility docs and cleanup |
-| 6 | [fdfc839](https://github.com/ookgezellig/profiel-tinka/commit/fdfc839) | Implement WCAG 2.0 Level AA accessibility improvements |
-| 7 | [2672556](https://github.com/ookgezellig/profiel-tinka/commit/2672556) | Add time breakdown for project creation |
-| 8 | [6d760fb](https://github.com/ookgezellig/profiel-tinka/commit/6d760fb) | Add table of contents to README |
-| 9 | [1b6cfe6](https://github.com/ookgezellig/profiel-tinka/commit/1b6cfe6) | Add table of contents to index.html and update README TOC |
-| 10 | [917e3c0](https://github.com/ookgezellig/profiel-tinka/commit/917e3c0) | Clarify that README is also 100% AI-generated |
-| 11 | [020659e](https://github.com/ookgezellig/profiel-tinka/commit/020659e) | Add interactive features and extract CSS/JS to separate files |
-| 12 | [e4fe861](https://github.com/ookgezellig/profiel-tinka/commit/e4fe861) | Add CSS/JS and visual alt-tags to time breakdown |
-| 13 | [010cd28](https://github.com/ookgezellig/profiel-tinka/commit/010cd28) | Add dark mode, favicon, sticky TOC, lazy loading and other improvements |
-| 14 | [c1f14c1](https://github.com/ookgezellig/profiel-tinka/commit/c1f14c1) | Add complete English version of the profile page |
-| 15 | [bf7b585](https://github.com/ookgezellig/profiel-tinka/commit/bf7b585) | Add interactive carousel, disclaimer, and update screenshots |
-| 16 | [d9a58d4](https://github.com/ookgezellig/profiel-tinka/commit/d9a58d4) | Fix desktop whitespace and dark mode contrast |
-
 ---
 
 ## Bestandsstructuur
