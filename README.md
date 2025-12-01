@@ -77,6 +77,23 @@ De `index.html` is gegenereerd door [Claude Code](https://claude.ai/claude-code)
 
 **100% AI-gegenereerd**: Dit volledige profiel - van bronnenonderzoek tot HTML-generatie - is gemaakt door AI (Claude) met behulp van MCP-tools (Exa voor zoeken, Playwright voor screenshots). Er is geen handmatige tussenkomst geweest bij het schrijven van code of content. De enige menselijke input bestond uit de initiële opdracht en feedback tijdens het proces.
 
+### Tijdsbesteding
+
+| Fase | Geschatte tijd |
+|------|----------------|
+| Bronnenonderzoek (Exa MCP) | ~15 min |
+| Screenshots maken (Playwright MCP) | ~10 min |
+| Markdown profiel schrijven | ~10 min |
+| HTML-pagina genereren met styling | ~15 min |
+| Repository opzet en eerste commit | ~5 min |
+| README documentatie | ~20 min |
+| Herstructurering en cleanup | ~15 min |
+| SEO, licentie en meta tags | ~10 min |
+| WCAG 2.0 toegankelijkheid | ~15 min |
+| **Totaal** | **~1 uur 55 min** |
+
+*Gemeten op basis van git commit timestamps (17:33 - 18:47) plus geschatte tijd voor voorbereidend onderzoek.*
+
 ---
 
 ## Bestandsstructuur
