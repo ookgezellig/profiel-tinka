@@ -140,13 +140,25 @@ De website is volledig responsief en werkt op alle schermformaten:
 - **Print**: Speciale print-stylesheet zonder navigatie-elementen
 
 ### WCAG 2.0 toegankelijkheid
-De pagina volgt de basis WCAG 2.0 richtlijnen:
-- Semantische HTML-structuur (`<header>`, `<nav>`, `<main>`, `<footer>`)
-- Alt-teksten op alle afbeeldingen
-- Voldoende kleurcontrast (PPF Blue #004899 op wit)
-- Leesbare lettergrootte (16px basis, schaalbaar)
+De pagina is geoptimaliseerd voor WCAG 2.0 Level AA toegankelijkheid:
+
+**Structuur & navigatie:**
+- Semantische HTML5-elementen met ARIA roles (`role="banner"`, `role="main"`, `role="navigation"`, `role="contentinfo"`)
+- Skip-to-content link voor keyboard gebruikers
 - Logische koppenstructuur (h1 → h2 → h3)
-- Links zijn duidelijk herkenbaar
+- Kruimelpad (breadcrumb) navigatie met `aria-label`
+
+**Visueel & interactie:**
+- Zichtbare focus states op alle interactieve elementen (3px gele outline)
+- Touch targets minimaal 44x44 pixels (WCAG 2.5.5)
+- Voldoende kleurcontrast (PPF Blue #004899 op wit = 8.5:1 ratio)
+- Leesbare lettergrootte (16px basis, schaalbaar)
+
+**Screenreaders:**
+- Alt-teksten op alle afbeeldingen
+- `aria-hidden="true"` op decoratieve SVG-iconen
+- `aria-label` op knoppen met alleen iconen
+- Duidelijke linkteksten
 
 ### AVG/GDPR compliance
 Deze website bevat persoonsgegevens van een publiek figuur:

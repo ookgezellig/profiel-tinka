@@ -86,6 +86,38 @@
             box-sizing: border-box;
         }
 
+        /* Skip to content link - WCAG 2.0 */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--ppf-blue);
+            color: var(--ppf-white);
+            padding: 8px 16px;
+            z-index: 1000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Focus states - WCAG 2.0 keyboard navigation */
+        a:focus,
+        button:focus,
+        .cta-button:focus,
+        .accordion-header:focus {
+            outline: 3px solid var(--ppf-yellow);
+            outline-offset: 2px;
+        }
+
+        /* Ensure focus is visible on all interactive elements */
+        :focus-visible {
+            outline: 3px solid var(--ppf-yellow);
+            outline-offset: 2px;
+        }
+
         body {
             font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             font-size: 16px;
@@ -136,9 +168,14 @@
             color: var(--ppf-text);
             text-decoration: none;
             font-weight: 600;
+            padding: 8px 4px; /* WCAG 2.0 touch target padding */
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .nav a:hover {
+        .nav a:hover,
+        .nav a:focus {
             color: var(--ppf-blue);
         }
 
@@ -152,9 +189,11 @@
         .breadcrumb a {
             color: var(--ppf-blue);
             text-decoration: none;
+            padding: 4px;
         }
 
-        .breadcrumb a:hover {
+        .breadcrumb a:hover,
+        .breadcrumb a:focus {
             text-decoration: underline;
         }
 
@@ -239,9 +278,12 @@
             text-decoration: none;
             font-weight: 600;
             transition: background 0.2s;
+            min-height: 44px; /* WCAG 2.0 touch target */
+            min-width: 44px;
         }
 
-        .cta-button:hover {
+        .cta-button:hover,
+        .cta-button:focus {
             background: var(--ppf-yellow-hover);
         }
 
@@ -318,6 +360,12 @@
 
         tr:hover {
             background: #eef5fc;
+        }
+
+        /* Table link accessibility */
+        td a:focus {
+            outline: 2px solid var(--ppf-yellow);
+            outline-offset: 1px;
         }
 
         /* Blockquotes */
@@ -432,6 +480,15 @@
 
         .footer-links a {
             color: var(--ppf-blue);
+            padding: 8px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            text-decoration: underline;
         }
 
         .footer-contact {
@@ -536,10 +593,13 @@
     </style>
 </head>
 <body>
+    <!-- Skip to content - WCAG 2.0 -->
+    <a href="#main-content" class="skip-link">Ga naar hoofdinhoud</a>
+
     <!-- Header -->
-    <header class="header">
-        <a href="https://www.ppf-apg.nl" class="logo">
-            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <header class="header" role="banner">
+        <a href="https://www.ppf-apg.nl" class="logo" aria-label="PPF APG homepage">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="8" cy="12" r="6" fill="#e31937"/>
                 <circle cx="20" cy="8" r="6" fill="#004899"/>
                 <circle cx="14" cy="22" r="6" fill="#c9d200"/>
@@ -549,7 +609,7 @@
                 <div class="logo-subtitle">Personeelspensioenfonds</div>
             </div>
         </a>
-        <nav class="nav">
+        <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
             <a href="https://www.ppf-apg.nl/pensioen-bij-ppf-apg">Pensioen bij PPF APG</a>
             <a href="https://www.ppf-apg.nl/uw-situatie-verandert">Uw situatie verandert</a>
             <a href="https://www.ppf-apg.nl/over-ppf-apg">Over PPF APG</a>
@@ -558,7 +618,7 @@
     </header>
 
     <!-- Breadcrumb -->
-    <nav class="breadcrumb">
+    <nav class="breadcrumb" role="navigation" aria-label="Kruimelpad">
         <a href="https://www.ppf-apg.nl">Home</a>
         <span>&rsaquo;</span>
         <a href="https://www.ppf-apg.nl/over-ppf-apg/wie-we-zijn">Wie we zijn</a>
@@ -569,7 +629,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" id="main-content" role="main">
         <h1>Tinka den Arend</h1>
 
         <div class="meta-info">
@@ -583,8 +643,8 @@
             <img src="screenshots/tinka_profile_photo.jpg" alt="Tinka den Arend" onerror="this.src='https://www.ppf-apg.nl/content/dam/ppf-apg/images/over-ppf-apg/tinka-den-arend.jpg'">
             <div class="profile-card-content">
                 <blockquote>"Ik vind het belangrijk dat PPF APG meerwaarde blijft bieden voor deelnemers, gepensioneerden en voor APG en gelieerde werkgevers."</blockquote>
-                <a href="mailto:tinka.den.arend@apg.nl" class="cta-button">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:tinka.den.arend@apg.nl" class="cta-button" aria-label="Stuur een e-mail naar Tinka den Arend">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     Neem direct contact op
                 </a>
             </div>
@@ -601,7 +661,7 @@
             <h3>Bekroond Leiderschap</h3>
             <p>Onder haar voorzitterschap behoorde PPF APG tot de drie "koplopers" die als eerste Nederlandse pensioenfondsen succesvol overgingen naar het nieuwe pensioenstelsel. Dit leidde in februari 2025 tot de eerste pensioenuitkeringen onder het vernieuwde stelsel.</p>
             <span class="award-badge">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 Pensioen Pro Award - Pensioenfonds van het Jaar 2025
             </span>
         </div>
@@ -939,7 +999,7 @@
             <tbody>
                 <tr>
                     <td><strong>25 juni 2025</strong></td>
-                    <td><span class="award-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Pensioen Pro Award "Pensioenfonds van het Jaar"</span></td>
+                    <td><span class="award-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Pensioen Pro Award "Pensioenfonds van het Jaar"</span></td>
                     <td>Als werkgeversvoorzitter PPF APG</td>
                 </tr>
             </tbody>
@@ -1194,13 +1254,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <h3>Waar kunnen we u mee helpen?</h3>
             <p>Zoek op onderwerp of stel uw vraag. Wij helpen u graag verder.</p>
 
             <div class="footer-contact">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#004899"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#004899" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                 <strong>020 583 59 15</strong>
                 <span>bereikbaar op werkdagen van 8:00 tot 17:30 uur.</span>
             </div>
