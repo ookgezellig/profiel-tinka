@@ -15,7 +15,7 @@ Deze activiteiten zijn niet zichtbaar in de commit geschiedenis maar vormden de 
 
 | Datum | Commits | Belangrijkste wijzigingen |
 |-------|---------|---------------------------|
-| 1 dec 2025 | 20 | Van eerste HTML tot volledige tweetalige site met documentatie |
+| 1-2 dec 2025 | 21 | Van eerste HTML tot volledige tweetalige site met documentatie |
 
 ---
 
@@ -326,6 +326,20 @@ Document estimated time spent on each phase:
 - Optimize sticky TOC sidebar for widescreen (max-width 1400px, smaller sidebar)
 - Remove table row hover animations (scale/shadow effects)
 - Expand The Org URL in both index.html and index-en.html
+
+---
+
+## Commit 21: TOC inline en bronnen-grid
+**Datum:** 2025-12-02
+**Commit:** [b289871](https://github.com/ookgezellig/profiel-tinka/commit/b289871)
+
+#### Remove sticky TOC sidebar, add 3-column sources grid
+
+- Remove sticky sidebar positioning for TOC (now always inline above content)
+- TOC scales with page width, 2 columns on wide screens, 1 column on narrow
+- Add responsive 3-column grid for Bronnen/Sources section
+- Grid collapses: 3 cols → 2 cols (< 900px) → 1 col (< 600px)
+- Update both NL and EN versions
 
 ---
 
